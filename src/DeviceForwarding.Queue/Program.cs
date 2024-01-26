@@ -12,7 +12,7 @@ host.UseSerilog((context, loggerConfiguration) => loggerConfiguration.ReadFrom.C
 
 host.ConfigureServices((context, services) =>
 {
-    services.AddSingleton<ResourceDataMessageConsumer>(provider =>
+    services.AddSingleton<ResourceDataMessageSubscriber>(provider =>
     {
         var ruleQueueConfiguration = context
             .Configuration
@@ -28,12 +28,12 @@ host.ConfigureServices((context, services) =>
         var serviceBusClient = new ServiceBusClient(ruleQueueConfiguration.QueueConnectionString);
         var serviceBusProcessor = serviceBusClient.CreateProcessor(ruleQueueConfiguration.QueueName);
 
-        return new ResourceDataMessageConsumer(
-            provider.GetRequiredService<ILogger<ResourceDataMessageConsumer>>(),
+        return new ResourceDataMessageSubscriber(
+            provider.GetRequiredService<ILogger<ResourceDataMessageSubscriber>>(),
             serviceBusProcessor);
     });
 
-    services.AddHostedService<ResourceDataMessageConsumerWorker>();
+    services.AddHostedService<ResourceDataMessageSubscriberWorker>();
 });
 
 await host.RunConsoleAsync();

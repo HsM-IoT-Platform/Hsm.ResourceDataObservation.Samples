@@ -5,17 +5,17 @@ using Microsoft.Extensions.Logging;
 
 namespace DeviceForwarding.Queue;
 
-public class ResourceDataMessageConsumerWorker : BackgroundService
+public class ResourceDataMessageSubscriberWorker : BackgroundService
 {
-    private readonly ILogger<ResourceDataMessageConsumerWorker> _logger;
-    private readonly ResourceDataMessageConsumer _consumer;
+    private readonly ILogger<ResourceDataMessageSubscriberWorker> _logger;
+    private readonly ResourceDataMessageSubscriber _subscriber;
 
-    public ResourceDataMessageConsumerWorker(
-        ILogger<ResourceDataMessageConsumerWorker> logger,
-        ResourceDataMessageConsumer consumer)
+    public ResourceDataMessageSubscriberWorker(
+        ILogger<ResourceDataMessageSubscriberWorker> logger,
+        ResourceDataMessageSubscriber subscriber)
     {
         _logger = logger;
-        _consumer = consumer;
+        _subscriber = subscriber;
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -24,7 +24,7 @@ public class ResourceDataMessageConsumerWorker : BackgroundService
         // since this is capturing a thread
         // there is no need to await it
         // it will run until the host is being stopped
-        return _consumer.RegisterSubscriberAsync(MessageHandler, stoppingToken);
+        return _subscriber.RegisterSubscriberAsync(MessageHandler, stoppingToken);
     }
 
     private Task MessageHandler(ResourceDataMessage message, CancellationToken cancellationToken)

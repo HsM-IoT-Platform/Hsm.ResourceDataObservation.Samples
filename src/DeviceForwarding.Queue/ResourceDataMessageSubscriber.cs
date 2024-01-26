@@ -8,13 +8,13 @@ namespace DeviceForwarding.Queue;
 
 public delegate Task MessageHandler(ResourceDataMessage message, CancellationToken cancellationToken);
 
-public class ResourceDataMessageConsumer : IAsyncDisposable
+public class ResourceDataMessageSubscriber : IAsyncDisposable
 {
-    private readonly ILogger<ResourceDataMessageConsumer> _logger;
+    private readonly ILogger<ResourceDataMessageSubscriber> _logger;
     private readonly ServiceBusProcessor _processor;
 
-    public ResourceDataMessageConsumer(
-        ILogger<ResourceDataMessageConsumer> logger,
+    public ResourceDataMessageSubscriber(
+        ILogger<ResourceDataMessageSubscriber> logger,
         ServiceBusProcessor processor)
     {
         _logger = logger;

@@ -10,6 +10,7 @@
     <ItemGroup>
       <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.17.2" />
       <PackageReference Include="Hsm.ResourceData.Messaging.Abstractions" Version="3.0.0" />
+      <PackageReference Include="Hsm.ResourceDataObservation.Messaging.ServiceBus" Version="1.0.0-alpha.1" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
       <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
       <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />

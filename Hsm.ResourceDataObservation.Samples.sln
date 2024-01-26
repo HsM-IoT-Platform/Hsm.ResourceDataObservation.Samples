@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B145569E-900
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceForwarding.Queue", "src\DeviceForwarding.Queue\DeviceForwarding.Queue.csproj", "{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventPublication.Queue", "src\EventPublication.Queue\EventPublication.Queue.csproj", "{C0460E80-54D6-4B57-B096-C232EE74AC63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E} = {B145569E-9000-42D0-82F3-7FD2910F69A1}
+		{C0460E80-54D6-4B57-B096-C232EE74AC63} = {B145569E-9000-42D0-82F3-7FD2910F69A1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7DE8F23-ADBA-4A82-87CA-5F95B5678B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0460E80-54D6-4B57-B096-C232EE74AC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0460E80-54D6-4B57-B096-C232EE74AC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0460E80-54D6-4B57-B096-C232EE74AC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0460E80-54D6-4B57-B096-C232EE74AC63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
